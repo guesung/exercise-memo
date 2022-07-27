@@ -1,7 +1,10 @@
-import "./App.css";
-
-function App() {
-  return <div className="App"></div>;
+import * as React from "react";
+import MainPage from "./pages/MainPage";
+import "./App.scss";
+export default function App() {
+  return (
+    <div>
+      <MainPage />
+    </div>
+  );
 }
-
-export default App;
