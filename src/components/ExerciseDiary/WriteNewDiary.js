@@ -1,12 +1,12 @@
 import React from "react";
 import Modal from "../Modal";
-import WriteNewDiaryText from "./WriteNewDiaryText";
+import WriteNewDiaryForm from "./WriteNewDiaryForm";
 
 const WriteNewDiary = (props) => {
   return (
     <div className="WriteNewDiary">
       <Modal handleOut={props.handleOut} />
-      <WriteNewDiaryText handleOut={props.handleOut} />
+      <WriteNewDiaryForm handleOut={props.handleOut} />
     </div>
   );
 };

@@ -1,6 +1,6 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
-import ButtonLink from "./ButtonLink";
+import LinkList from "./LinkList";
 
 const Header = () => {
   const navigate = useNavigate();
@@ -15,7 +15,7 @@ const Header = () => {
         </span>
         <span>WE</span>
       </div>
-      <ButtonLink />
+      <LinkList />
     </header>
   );
 };

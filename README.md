@@ -23,6 +23,9 @@
 | :-----: | :--------: | :--------: |
 | 1 주차  | [:link:]() | [:link:]() |
 
+1일차(7/26) ; 설계도 작성
+2일차 ; Header와 WriteNewDiary(새 일지 작성) 페이지 작성
+
 ## 📚 Project Settings
 
 #### 📢 Install npm dependencies

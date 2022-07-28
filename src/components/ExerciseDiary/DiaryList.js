@@ -1,23 +1,24 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import DiaryContext from "../../store/diary-context";
+import Modal from "../Modal";
+import DiaryItem from "./DiaryItem";
+import EditDiary from "./EditDiary";
 
 const DiaryList = () => {
-  const diaryCtx = useContext(DiaryContext);
+  const ctx = useContext(DiaryContext);
+  const handleDeleteButton = (e) => {
+    ctx.onDelete(e.target.id);
+  };
 
   return (
-    <div className="DiaryList">
-      {diaryCtx.listState.map((diary) => (
-        <div className="DiaryItem" key={diary.id}>
-          <div className="title">
-            <p>{diary.date}</p>
-          </div>
-          <div className="content">
-            <p>부위 : {diary.part}</p>
-            <p>시간(/m) : {diary.minutes}</p>
-            <p>만족도(/10) : {diary.satisfaction}</p>
-            <p>Review : {diary.review}</p>
-          </div>
-        </div>
+    <div className="DiaryList card">
+      {ctx.listState.map((diary) => (
+        <DiaryItem
+          key={diary.id}
+          handleDeleteButton={handleDeleteButton}
+          diary={diary}
+          onEditDate={ctx.onEditDate}
+        />
       ))}
     </div>
   );
