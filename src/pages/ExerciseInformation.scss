@@ -75,7 +75,7 @@
   }
   .submitForm {
     width: 400px;
-    height: 400px;
+    height: 300px;
     position: fixed;
     right: 0;
     left: 0;
@@ -84,7 +84,7 @@
     border-radius: 10px;
     z-index: 1;
     background-color: white;
-    padding: 10px;
+    padding: 20px 10px;
     box-sizing: border-box;
     border: 1px solid black;
     display: flex;
@@ -105,10 +105,26 @@
         border: 1px solid rgb(155, 136, 136);
       }
     }
+    .submit--btn {
+      position: absolute;
+      right: 50px;
+      bottom: 10px;
+    }
+    .out--btn {
+      position: absolute;
+      right: 10px;
+      bottom: 10px;
+    }
   }
-  .submit--btn {
-    position: absolute;
-    right: 10px;
-    bottom: 10px;
+  .add-box {
+    width: 100%;
+    height: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .add-btn {
+      margin-top: 20px;
+      border-radius: 20px;
+    }
   }
 }

@@ -26,14 +26,15 @@ const DiaryList = () => {
 
   return (
     <div className="DiaryList card">
-      {ctx.listState.map((diary) => (
-        <DiaryItem
-          key={diary.id}
-          handleDeleteButton={handleDeleteButton}
-          diary={diary}
-          onEdit={ctx.onEdit}
-        />
-      ))}
+      {ctx.listState &&
+        ctx.listState.map((diary) => (
+          <DiaryItem
+            key={diary.id}
+            handleDeleteButton={handleDeleteButton}
+            diary={diary}
+            onEdit={ctx.onEdit}
+          />
+        ))}
       <div className="add--button-area">
         <button className="add--button" onClick={handleAddButton}>
           +

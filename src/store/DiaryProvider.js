@@ -4,13 +4,20 @@ import DiaryContext from "./diary-context";
 const reducer = (state, action) => {
   switch (action.type) {
     case "ADD":
-      const newState = [
-        ...state,
-        {
-          id: Math.random(),
-          ...action.list,
-        },
-      ];
+      const newState = state
+        ? [
+            ...state,
+            {
+              id: Math.random(),
+              ...action.list,
+            },
+          ]
+        : [
+            {
+              id: Math.random(),
+              ...action.list,
+            },
+          ];
       return newState;
     case "DELETE":
       const newStates = state.filter(

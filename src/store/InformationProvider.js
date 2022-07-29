@@ -20,6 +20,13 @@ const ExerciseInformationList = [
           "https://mblogthumb-phinf.pstatic.net/20150402_108/nabuilder_1427980211726hUOz2_JPEG/butterfly.jpg?type=w2",
         youtubeLink: "https://www.youtube.com/watch?v=ZdJ3a6pQzKE",
       },
+      {
+        id: Math.random(),
+        exerciseName: "Cable CrossOver",
+        photoLink:
+          "https://post-phinf.pstatic.net/MjAxNzA5MTRfMjgw/MDAxNTA1MzY1NDE5MDU4.Ny3LeEE_ySNzzo54QB9uMnbFw3rYTvlU0kXtvS2PDMwg.PCk9e3NytahbRCh8MR8izF4_WikfFjqcIQ3JguwFLb4g.JPEG/po3.jpg?type=w1200",
+        youtubeLink: "https://www.youtube.com/watch?v=Il7FXbxd1cY",
+      },
     ],
   },
   {
@@ -38,6 +45,26 @@ const ExerciseInformationList = [
         photoLink:
           "https://mblogthumb-phinf.pstatic.net/MjAxNzA3MDRfMTky/MDAxNDk5MTYyMDE4Njk3.EXqNwIFoGSaBDUd5bVAaIn6FmAkz9m3M5mPMAb_9eqMg.0L7l0SqUgccFLJ-_Rr_SO2ewe7uvLa3FVVPLMigVuyQg.JPEG.chingyangn/bl6.jpg?type=w800",
         youtubeLink: "https://www.youtube.com/watch?v=-SNHJ3RjoJs",
+      },
+    ],
+  },
+  {
+    id: Math.random(),
+    exercisePart: "Leg",
+    exerciseType: [
+      {
+        id: Math.random(),
+        exerciseName: "Leg extension",
+        photoLink:
+          "https://www.physiotutors.com/wp-content/uploads/2022/01/Seated-Leg-Extension.png",
+        youtubeLink: "https://www.youtube.com/watch?v=rIoPAhtMdvw",
+      },
+      {
+        id: Math.random(),
+        exerciseName: "Leg Press",
+        photoLink:
+          "https://www.verywellfit.com/thmb/xpCB8K_4_Xjl8N_UA7wSZBwbLus=/768x432/smart/filters:no_upscale()/50-3498610-Leg-Press-GIF-7e720a89577d456db0bcb5dab2bd5d5f.gif",
+        youtubeLink: "https://www.youtube.com/watch?v=PmqkX6Te540",
       },
     ],
   },
