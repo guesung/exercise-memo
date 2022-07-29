@@ -72,32 +72,126 @@ body {
     flex-direction: row;
     margin-top: 100px;
     border: none;
-    .DiaryItem {
+    .DiaryItem,
+    .DiaryNewItem {
       width: 350px;
       height: 300px;
       margin: 10px 20px;
       border: 1px solid rgb(192, 165, 165);
       border-radius: 10px;
       box-sizing: border-box;
-      padding: 20px 10px;
       position: relative;
-      cursor: pointer;
       .card-header {
         text-align: center;
+        height: 60px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
       }
-      .card-body {
-        margin-top: 10px;
-        p {
-          margin-bottom: 7px;
+      .item-title {
+        height: 60px;
+        .title {
+          height: 50px;
+          font-size: 20px;
+          background-color: rgb(223, 213, 213);
+          border-top-left-radius: 7px;
+          border-top-right-radius: 7px;
+          border: none;
+          cursor: pointer;
+        }
+        .status--edit {
+          .title {
+            width: 100%;
+            text-align: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            input {
+              border: none;
+              background-color: rgb(223, 213, 213);
+            }
+          }
+          .btn--edit-complete {
+            position: absolute;
+            right: 35px;
+            top: 10px;
+            border: none;
+            border-radius: 5px;
+            width: 30px;
+            height: 30px;
+          }
+        }
+        .status--show {
+          .title {
+            cursor: pointer;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+          }
         }
       }
-      .btn {
+      .item-body {
+        padding: 0 5px;
+        button {
+          border: none;
+          border-top-right-radius: 5px;
+          border-bottom-right-radius: 5px;
+        }
+        .title {
+          width: 50px;
+          height: 30px;
+          text-align: center;
+          color: blue;
+        }
+        .content {
+          cursor: pointer;
+          width: 230px;
+        }
+        .status--show {
+          display: flex;
+        }
+        .status--edit {
+          .btn--edit-complete {
+            width: 30px;
+            height: 30px;
+          }
+        }
+        .status--edit:first-child {
+          display: flex;
+        }
+        textarea#review {
+          border: none;
+          min-height: 120px;
+        }
+      }
+      .btn--out {
         position: absolute;
         bottom: 10px;
         right: 10px;
-        /* width: 20px;
-        height: 20px; */
         text-align: center;
+      }
+    }
+    .DiaryNewItem {
+    }
+    .add--button-area {
+      width: 350px;
+      height: 300px;
+      margin: 10px 20px;
+      border-radius: 10px;
+      box-sizing: border-box;
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      .add--button {
+        width: 60px;
+        height: 60px;
+        border: none;
+        border-radius: 20px;
+        background-color: rgb(223, 181, 181);
+      }
+      .add--button:hover {
+        background-color: rgb(196, 178, 178);
       }
     }
   }
@@ -146,7 +240,7 @@ body {
       .review {
         textarea {
           height: 450px;
-          resize: none;
+          /* resize: none; */
           /* border-radius: 10px; */
           box-sizing: border-box;
         }

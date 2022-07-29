@@ -1,0 +1,114 @@
+.InformationList {
+  position: relative;
+  height: 100%;
+  /* display: flex; */
+  .InformationItem {
+    margin-top: 20px;
+    section {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      .title {
+        height: 100%;
+        width: 100px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        div {
+          background-color: rgb(199, 216, 199);
+          border: none;
+          border-radius: 7px;
+          width: 80px;
+          height: 60px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          font-weight: 700;
+        }
+      }
+      .swiper {
+        width: 1100px;
+        height: 100%;
+      }
+      .swiper-slide {
+        text-align: center;
+        font-size: 18px;
+        height: 200px;
+        margin-top: 50px;
+        display: -ms-flexbox;
+        display: -webkit-flex;
+        display: flex;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        -webkit-justify-content: center;
+        justify-content: center;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        -webkit-align-items: center;
+        align-items: center;
+        position: relative;
+        a {
+          img {
+            display: block;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+          }
+          .description {
+            position: absolute;
+            bottom: 0;
+            color: rgb(41, 53, 41);
+            left: 0;
+            right: 0;
+            margin: auto;
+            box-sizing: content-box;
+            span {
+              padding: 8px;
+              border-radius: 6px;
+              background-color: #ececec;
+              opacity: 0.7;
+            }
+          }
+        }
+      }
+    }
+  }
+  .submitForm {
+    width: 400px;
+    height: 400px;
+    position: fixed;
+    right: 0;
+    left: 0;
+    top: 500px;
+    margin: auto;
+    border-radius: 10px;
+    z-index: 1;
+    background-color: white;
+    padding: 10px;
+    box-sizing: border-box;
+    border: 1px solid black;
+    display: flex;
+    flex-direction: column;
+    .input-box {
+      height: 30px;
+      display: flex;
+      margin-bottom: 3px;
+      label {
+        width: 60px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      select,
+      input {
+        width: 300px;
+        border: 1px solid rgb(155, 136, 136);
+      }
+    }
+  }
+  .submit--btn {
+    position: absolute;
+    right: 10px;
+    bottom: 10px;
+  }
+}

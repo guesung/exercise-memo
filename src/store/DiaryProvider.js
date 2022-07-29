@@ -1,56 +1,6 @@
-import React, { useReducer } from "react";
+import React, { useReducer, useState } from "react";
 import DiaryContext from "./diary-context";
 
-let dumpList = [
-  {
-    id: "f1",
-    date: "2022-07-20",
-    part: "Chest",
-    minutes: "45",
-    satisfaction: 7,
-    review: "유튜브를 듣느라 운동에 온전히 집중을 하지 못함",
-  },
-  {
-    id: "f2",
-    date: "2022-07-21",
-    part: "Chest",
-    minutes: "45",
-    satisfaction: 7,
-    review: "유튜브를 듣느라 운동에 온전히 집중을 하지 못함",
-  },
-  {
-    id: "f3",
-    date: "2022-07-22",
-    part: "Chest",
-    minutes: "45",
-    satisfaction: 7,
-    review: "유튜브를 듣느라 운동에 온전히 집중을 하지 못함",
-  },
-  {
-    id: "f4",
-    date: "2022-07-23",
-    part: "Chest",
-    minutes: "45",
-    satisfaction: 7,
-    review: "유튜브를 듣느라 운동에 온전히 집중을 하지 못함",
-  },
-  {
-    id: "f5",
-    date: "2022-07-24",
-    part: "Chest",
-    minutes: "45",
-    satisfaction: 7,
-    review: "유튜브를 듣느라 운동에 온전히 집중을 하지 못함",
-  },
-  {
-    id: "f6",
-    date: "2022-07-25",
-    part: "Chest",
-    minutes: "45",
-    satisfaction: 7,
-    review: "유튜브를 듣느라 운동에 온전히 집중을 하지 못함",
-  },
-];
 const reducer = (state, action) => {
   switch (action.type) {
     case "ADD":
@@ -68,10 +18,11 @@ const reducer = (state, action) => {
       );
       return newStates;
     case "EDIT":
-      const itIndex = state.findIndex((it) => it.id === action.id);
+      const itIndex = state.findIndex(
+        (it) => String(it.id) === String(action.id)
+      );
       let newStatess = [...state];
-      console.log(newStatess, itIndex);
-      newStatess[itIndex].date = action.value;
+      newStatess[itIndex][String(action.property)] = String(action.value);
       return newStatess;
     default:
       return state;
@@ -79,8 +30,8 @@ const reducer = (state, action) => {
 };
 
 const DiaryProvider = (props) => {
-  const [listState, dispatch] = useReducer(reducer, dumpList);
-
+  const localList = JSON.parse(localStorage.getItem("localList"));
+  const [listState, dispatch] = useReducer(reducer, localList);
   const addDiaryList = (list) => {
     dispatch({ type: "ADD", list: list });
   };
@@ -89,15 +40,19 @@ const DiaryProvider = (props) => {
     dispatch({ type: "DELETE", id: id });
   };
 
-  const onEditDate = (id, value) => {
-    dispatch({ type: "EDIT", id: id, value: value });
+  const onEdit = (id, property, value) => {
+    dispatch({ type: "EDIT", id: id, property: property, value: value });
   };
+
+  localStorage.setItem("localList", JSON.stringify(listState));
+
+  useState(() => {}, [listState]);
 
   const contextProp = {
     listState,
     addDiaryList,
     onDelete,
-    onEditDate,
+    onEdit,
   };
 
   return (

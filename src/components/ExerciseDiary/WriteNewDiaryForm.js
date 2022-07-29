@@ -7,9 +7,9 @@ const WriteNewDiaryForm = (props) => {
   const [errorMessage, setErrorMessage] = useState(false);
 
   const [inputData, setInputData] = useState({
-    date: `${todayDate.getFullYear()}-${("00" + todayDate.getMonth()).slice(
-      -2
-    )}-${("00" + todayDate.getDate()).slice(-2)}`,
+    date: `${todayDate.getFullYear()}-${(
+      "00" + String(todayDate.getMonth() + 1)
+    ).slice(-2)}-${("00" + todayDate.getDate()).slice(-2)}`,
     part: "",
     minutes: "",
     satisfaction: "",
@@ -77,15 +77,15 @@ const WriteNewDiaryForm = (props) => {
           <label className="input-group-text" htmlFor="part">
             부위
           </label>
-          <input
+          {/*           <input
             className="form-control"
             id="part"
             type="text"
             defaultValue={inputData.part}
             name="part"
             onChange={handleInput}
-          />
-          {/*           <select
+          /> */}
+          <select
             name="part"
             className="form-control"
             id="part"
@@ -97,7 +97,7 @@ const WriteNewDiaryForm = (props) => {
             <option value="chest">가슴+삼두</option>
             <option value="back">등+이두</option>
             <option value="leg">하체+어깨</option>
-          </select> */}
+          </select>
         </div>
         <div className="input-group minutes">
           <label className="input-group-text" htmlFor="minutes">

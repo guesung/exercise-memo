@@ -5,15 +5,23 @@ import "./index.css";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import WriteDiary from "./pages/WriteDiary";
 import DiaryProvider from "./store/DiaryProvider";
+import ExerciseInformation from "./pages/ExerciseInformation";
+import InformationProvider from "./store/InformationProvider";
 
 let rootElement = document.getElementById("root");
 ReactDOM.createRoot(rootElement).render(
-  <DiaryProvider>
-    <BrowserRouter>
-      <Routes>
-        <Route path="/" element={<App />} />
-        <Route path="/writediary" element={<WriteDiary />} />
-      </Routes>
-    </BrowserRouter>
-  </DiaryProvider>
+  <InformationProvider>
+    <DiaryProvider>
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<App />} />
+          <Route path="/writediary" element={<WriteDiary />} />
+          <Route
+            path="/exerciseinformation"
+            element={<ExerciseInformation />}
+          />
+        </Routes>
+      </BrowserRouter>
+    </DiaryProvider>
+  </InformationProvider>
 );

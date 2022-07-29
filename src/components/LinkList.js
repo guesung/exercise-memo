@@ -3,20 +3,23 @@ import { useNavigate } from "react-router-dom";
 
 const LinkList = () => {
   const navigate = useNavigate();
-  const handleWriteDiaryButton = () => {
-    navigate("/writediary");
-  };
+  const handleWriteDiaryButton = () => {};
+
   return (
     <div className="LinkList">
       <button
         className="btn btn-outline-primary "
-        onClick={handleWriteDiaryButton}
+        onClick={() => {
+          navigate("/writediary");
+        }}
       >
         일지 작성
       </button>
       <button
         className="btn btn-outline-primary"
-        onClick={handleWriteDiaryButton}
+        onClick={() => {
+          navigate("/exerciseinformation");
+        }}
       >
         운동 정보
       </button>

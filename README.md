@@ -25,6 +25,8 @@
 
 1일차(7/26) ; 설계도 작성
 2일차 ; Header와 WriteNewDiary(새 일지 작성) 페이지 작성
+3일차 ; WriteNewDiaryForm 완성 & DiaryEdit 작성
+4일차 ;
 
 ## 📚 Project Settings
 

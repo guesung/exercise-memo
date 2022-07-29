@@ -4,7 +4,7 @@ const DiaryContext = React.createContext({
   listState: [],
   addDiaryList: () => {},
   onDelete: () => {},
-  onEditDate: () => {},
+  onEdit: () => {},
 });
 
 export default DiaryContext;
