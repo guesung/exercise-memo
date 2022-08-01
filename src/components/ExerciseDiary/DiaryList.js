@@ -44,4 +44,4 @@ const DiaryList = () => {
   );
 };
 
-export default DiaryList;
+export default React.memo(DiaryList);

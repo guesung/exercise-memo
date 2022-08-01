@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 
 const DiaryItem = (props) => {
   const diary = props.diary;
@@ -10,6 +10,14 @@ const DiaryItem = (props) => {
     satisfaction: false,
     review: false,
   });
+
+  const isAllFalse =
+    isEdit.date === false &&
+    isEdit.part === false &&
+    isEdit.minutes === false &&
+    isEdit.satisfaction === false &&
+    isEdit.review === false;
+
   const [editInput, setEditInput] = useState({
     date: diary.date,
     part: diary.part,
@@ -37,6 +45,31 @@ const DiaryItem = (props) => {
     setIsEdit({
       ...isEdit,
       [e.target.name]: false,
+    });
+  };
+  /* 수정 취소 */
+  const handleCancelButton = () => {
+    setIsEdit({
+      date: false,
+      part: false,
+      minutes: false,
+      satisfaction: false,
+      review: false,
+    });
+  };
+
+  const handleEditAllButton = (e) => {
+    props.onEdit(e.target.id, "date", editInput["date"]);
+    props.onEdit(e.target.id, "part", editInput["part"]);
+    props.onEdit(e.target.id, "minutes", editInput["minutes"]);
+    props.onEdit(e.target.id, "satisfaction", editInput["satisfaction"]);
+    props.onEdit(e.target.id, "review", editInput["review"]);
+    setIsEdit({
+      date: false,
+      part: false,
+      minutes: false,
+      satisfaction: false,
+      review: false,
     });
   };
 
@@ -193,18 +226,37 @@ const DiaryItem = (props) => {
             <span id="review" onClick={handleEditOn} className="content">
               {diary.review}
             </span>
+            
           </div>
         )}
       </div>
       <button
-        onClick={props.handleDeleteButton}
-        className="btn btn-outline-danger btn--out"
+      onClick={handleEditAllButton}
+        className="btn btn-outline-success btn--complete"
         id={diary.id}
+         
       >
-        x
+        V
       </button>
+      {isAllFalse ? (
+        <button
+          onClick={props.handleDeleteButton}
+          className="btn btn-outline-danger btn--out"
+          id={diary.id}
+        >
+          X
+        </button>
+      ) : (
+        <button
+          onClick={handleCancelButton}
+          className="btn btn-danger btn--out"
+          id={diary.id}
+        >
+          X
+        </button>
+      )}
     </div>
   );
 };
 
-export default DiaryItem;
+export default React.memo(DiaryItem);

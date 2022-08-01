@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import Header from "../components/Header";
 import Inner from "../components/Inner";
-import Button from "../UI/Button";
 import DiaryList from "../components/ExerciseDiary/DiaryList";
 import WriteNewDiary from "../components/ExerciseDiary/WriteNewDiary";
+import "./WriteDiary.scss";
 
 const WriteDiary = () => {
   const [isWriteNew, setIsWriteNew] = useState(false);
@@ -16,17 +16,17 @@ const WriteDiary = () => {
   };
   return (
     <React.Fragment>
-      {isWriteNew && <WriteNewDiary handleOut={handleOut} />}
       <Inner>
         <Header />
       </Inner>
       <Inner className="WriteDiary">
-        <Button
-          className="btn btn--write-new-diary"
+        {isWriteNew && <WriteNewDiary handleOut={handleOut} />}
+        <button
+          className="btn btn-outline-info btn--write-new-diary"
           onClick={handleWriteNewDiary}
         >
           새 일지 작성
-        </Button>
+        </button>
         <DiaryList />
       </Inner>
     </React.Fragment>

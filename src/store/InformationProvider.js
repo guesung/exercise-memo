@@ -94,13 +94,15 @@ const reducer = (state, action) => {
 };
 
 const InformationProvider = (props) => {
-  const [informationList, dispatch] = useReducer(
-    reducer,
-    ExerciseInformationList
+  const informationLocalList = JSON.parse(
+    localStorage.getItem("informationLocalList")
   );
+  const [informationList, dispatch] = useReducer(reducer, informationLocalList);
   const onAddExerciseType = (typeObject) => {
     dispatch({ type: "ADD", typeObject: typeObject });
   };
+
+  localStorage.setItem("informationLocalList", JSON.stringify(informationList));
 
   const contextProp = {
     informationList: informationList,

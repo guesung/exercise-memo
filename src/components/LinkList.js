@@ -23,20 +23,8 @@ const LinkList = () => {
       >
         운동 정보
       </button>
-      <button
-        className="btn btn-outline-primary"
-        onClick={handleWriteDiaryButton}
-      >
-        버튼3
-      </button>
-      <button
-        className="btn btn-outline-primary"
-        onClick={handleWriteDiaryButton}
-      >
-        버튼4
-      </button>
     </div>
   );
 };
 
-export default LinkList;
+export default React.memo(LinkList);
