@@ -34,6 +34,10 @@
 - 5일차 ; ExerciseInformation을 LocalStarage에 저장 & Firebase배포 & 마무리
   <br /> <br />
 
+## 시연 사진
+<img src="src\assets\img\ExerciseInformationPage.png" width="600px" >
+<img src="src\assets\img\ExerciseDiary.png" >
+
 ## 📚 Project Settings
 
 #### 📢 Install npm dependencies
@@ -126,5 +130,3 @@
 
 #### 👉 DeskTop
 
-<img src="src\assets\img\ExerciseInformationPage.png" width="600px" >
-<img src="src\assets\img\ExerciseDiary.png" >
