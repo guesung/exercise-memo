@@ -92,7 +92,7 @@
 
 - 자세한 사항은 `package.json`의 `scripts` 참고
 
-## 📚 Getting start with firebase
+## 📚 Getting start with firebase  
 
 - [Firebase](https://firebase.google.com/)
 - [Docs](https://firebase.google.com/docs/cli?hl=ko)
