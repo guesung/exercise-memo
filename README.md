@@ -126,7 +126,3 @@
 
 - React
 
-## 🦄 Demo Image
-
-#### 👉 DeskTop
-
